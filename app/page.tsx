@@ -7,66 +7,66 @@ import React, { useState } from 'react';
 const artPieces = [
     {
         id: 1,
-        title: 'Esqueleto de T-Rex',
-        artist: 'Paleontología',
-        imageUrl: 'https://ca-times.brightspotcdn.com/dims4/default/36607ae/2147483647/strip/true/crop/5196x3464+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fbd%2F09%2Ffa2ad5fc398c092fc7bf1628b2a4%2F937a0abbf665433b98641c7130fada43',
-        vibe: 'Ciencia',
+        title: 'Las Meninas',
+        artist: 'Diego Velázquez',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Las_Meninas_01.jpg',
+        vibe: 'Realismo',
         vibeScore: 1
     },
     {
         id: 2,
-        title: 'Las Meninas',
-        artist: 'Diego Velázquez',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Las_Meninas_01.jpg',
-        vibe: 'ArteClasico',
+        title: 'El Jardín de las Delicias',
+        artist: 'El Bosco',
+        imageUrl: 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/77KYFY4HLFEWJMIUUVLUWOWJDY.jpg',
+        vibe: 'Fantasia',
         vibeScore: 1
     },
     {
         id: 3,
-        title: 'Sarcófago Egipcio',
-        artist: 'Antiguo Egipto',
-        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Zi5XQT6I0nRHnDN2bmXsnvV2oLta4S8b5A&s',
-        vibe: 'Historia',
+        title: 'Saturno devorando a su hijo',
+        artist: 'Francisco de Goya',
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVk-JraxwJNaA-fGtgGmuB6gHAb70skcZbA&s',
+        vibe: 'Misterio',
         vibeScore: 1
     },
     {
         id: 4,
-        title: 'El Guernica',
-        artist: 'Pablo Picasso',
-        imageUrl: 'https://media.revistaad.es/photos/60c755363b679f958df5a86a/master/w_1600%2Cc_limit/107037.jpg',
-        vibe: 'ArteContemporaneo',
+        title: 'El 3 de mayo en Madrid',
+        artist: 'Francisco de Goya',
+        imageUrl: 'https://c8.alamy.com/zooms/9/c470017726cc4f0a96c23905caff59f6/2bwhd8m.jpg',
+        vibe: 'Drama',
         vibeScore: 1
     },
     {
         id: 5,
-        title: 'Meteorito',
-        artist: 'Geología y Espacio',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Willamette_Meteorite_AMNH.jpg',
-        vibe: 'Ciencia',
+        title: 'El Aquelarre',
+        artist: 'Francisco de Goya',
+        imageUrl: 'https://fundaciongoyaenaragon.es/files/resize/800x600/files/images/526_4.7.49.JPG',
+        vibe: 'Misterio',
         vibeScore: 1
     },
     {
         id: 6,
-        title: 'El Jardín de las Delicias',
-        artist: 'El Bosco',
-        imageUrl: 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/77KYFY4HLFEWJMIUUVLUWOWJDY.jpg',
-        vibe: 'ArteClasico',
+        title: 'Las tres Gracias',
+        artist: 'Peter Paul Rubens',
+        imageUrl: 'https://www.todocuadros.es/cdn/shop/files/rubens-tres-gracias-prado-livingroom-8-ver4.jpg?v=1753186185&width=1739',
+        vibe: 'Fantasia',
         vibeScore: 1
     },
     {
         id: 7,
-        title: 'Dama de Elche',
-        artist: 'Arte Íbero',
-        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD_RF2TCZLS5m8EFTB_9s4ppK3pm8D-VVrIw&s',
-        vibe: 'Historia',
+        title: 'El caballero de la mano en el pecho',
+        artist: 'El Greco',
+        imageUrl: 'https://content3.cdnprado.net/imagenes/Documentos/imgsem/9c/9cb7/9cb73bdf-66e8-4826-a79c-5de2b15a1da6/bf8475d4-1066-4fda-b2a9-1dd3e39e5ced_832.jpg',
+        vibe: 'Realismo',
         vibeScore: 1
     },
     {
         id: 8,
-        title: 'El hombre invisible',
-        artist: 'Salvador Dalí',
-        imageUrl: 'https://totenart.com/noticias/wp-content/uploads/2015/11/Salvador-Dali-el-hombreinvisible-totenart-noticias-1.jpg',
-        vibe: 'ArteContemporaneo',
+        title: 'El Descendimiento',
+        artist: 'Rogier van der Weyden',
+        imageUrl: 'https://content3.cdnprado.net/imagenes/Documentos/imgsem/69/697b/697b0838-a6c2-4fc7-85e4-41280f526b43/13d2029c-b0c4-4e75-a434-7cf8768eeb27.jpg',
+        vibe: 'Drama',
         vibeScore: 1
     }
 ];
@@ -75,7 +75,7 @@ const artPieces = [
 export default function Page() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showResult, setShowResult] = useState(false);
-    const [scores, setScores] = useState({ Ciencia: 0, ArteClasico: 0, Historia: 0, ArteContemporaneo: 0 });
+    const [scores, setScores] = useState({ Misterio: 0, Fantasia: 0, Realismo: 0, Drama: 0 });
 
     // Función para manejar las decisiones del usuario
     const handleSwipe = (liked: boolean) => {
@@ -106,7 +106,7 @@ export default function Page() {
     const resetDemo = () => {
         setCurrentIndex(0);
         setShowResult(false);
-        setScores({ Ciencia: 0, ArteClasico: 0, Historia: 0, ArteContemporaneo: 0 });
+        setScores({ Misterio: 0, Fantasia: 0, Realismo: 0, Drama: 0 });
     };
 
     // --- PANTALLA DE RESULTADOS ---
@@ -115,25 +115,25 @@ export default function Page() {
 
         // Diccionario de resultados apuntando a museos reales
         const resultsData = {
-            Ciencia: {
-                title: "Mente Inquisitiva y Científica 🔬",
-                museum: "Museo Nacional de Ciencias Naturales",
-                route: "Ruta exprés: Ve directo al Pabellón de Paleontología para ver los grandes esqueletos, y luego pasa por la sala de Evolución Humana."
-            },
-            ArteClasico: {
-                title: "Alma Clásica y Refinada 🏛️",
+            Misterio: {
+                title: "Ruta de las Sombras 🌑",
                 museum: "Museo Nacional del Prado",
-                route: "Ruta exprés: Empieza en la Galería Central con Velázquez (Sala 12), baja a ver el Renacimiento Italiano y termina con las Pinturas Negras de Goya."
+                route: "Ve a la Planta 0 y sumérgete en las inquietantes Pinturas Negras de Goya (Salas 67 y 68)."
             },
-            Historia: {
-                title: "Explorador de la Antigüedad 🏺",
-                museum: "Museo Arqueológico Nacional (MAN)",
-                route: "Ruta exprés: Dirígete a la planta baja para ver los tesoros de Egipto y Oriente Próximo, y no te pierdas la Dama de Elche."
+            Fantasia: {
+                title: "Ruta de los Sueños y Mitos ✨",
+                museum: "Museo Nacional del Prado",
+                route: "Ve a la Planta 0 (Sala 56A) para alucinar con el surrealismo de El Bosco y busca los mitos de Rubens en la Sala 29."
             },
-            ArteContemporaneo: {
-                title: "Vanguardista y Abstracto 🎨",
-                museum: "Museo Reina Sofía",
-                route: "Ruta exprés: Sube directamente a la Colección 1 en la 2ª planta para impactarte con el Guernica y el Surrealismo de Dalí."
+            Realismo: {
+                title: "Ruta de la Corte y la Verdad 👑",
+                museum: "Museo Nacional del Prado",
+                route: "Tu destino principal es la gran Sala 12 (Planta 1) para ver a Velázquez, y los retratos hiperrealistas de El Greco."
+            },
+            Drama: {
+                title: "Ruta de la Pasión y la Tragedia 🎭",
+                museum: "Museo Nacional del Prado",
+                route: "Busca la fuerza de los fusilamientos de Goya y el dramatismo de la pintura flamenca (Planta 0)."
             }
         };
 
@@ -146,18 +146,18 @@ export default function Page() {
                     <p className="text-gray-400 mb-6">Tus elecciones revelan que eres un perfil:</p>
 
                     <div className="bg-gray-700 rounded-xl p-6 mb-6 border border-indigo-500/30 shadow-inner">
-                        <h2 className="text-2xl font-black text-white mb-2">{result.title}</h2>
+                        <h2 className="text-2xl font-black text-white mb-2">Perfil: {winningVibe}</h2>
                     </div>
 
                     <div className="text-left bg-gray-900/50 p-5 rounded-lg border border-indigo-500/50 mb-8">
                         <h3 className="font-semibold text-indigo-300 mb-2 flex items-center text-lg">
                             <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            Destino Ideal:
+                            Selección para ti:
                         </h3>
-                        <p className="text-white font-bold text-xl mb-3">{result.museum}</p>
+                        <p className="text-white font-bold text-xl mb-3">{result.title}</p>
                         <div className="h-px w-full bg-gray-700 mb-3"></div>
                         <p className="text-gray-300 text-sm leading-relaxed">
-                            <span className="font-semibold text-indigo-400">🎯 {result.route}</span>
+                            <span className="font-semibold text-indigo-400">📍 {result.route}</span>
                         </p>
                     </div>
 
@@ -181,9 +181,9 @@ export default function Page() {
             {/* Header App */}
             <div className="text-center mb-6">
                 <h1 className="text-3xl sm:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
-                    MuseMatch
+                    MuseMatch <span className="text-indigo-500/50 text-xl font-light">| Prado</span>
                 </h1>
-                <p className="text-gray-400 text-sm mt-1">Sigue tu instinto visual</p>
+                <p className="text-gray-400 text-sm mt-1">Conecta con las obras maestras del Prado</p>
             </div>
 
             {/* Tarjeta de la Obra (Card) */}
